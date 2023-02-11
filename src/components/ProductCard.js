@@ -3,7 +3,7 @@ import { BiListPlus } from "react-icons/bi";
 import { useLocation } from "react-router-dom";
 import { MdDeleteForever } from "react-icons/md";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../app/features/cart/cartSlice";
+import { addToCart, removeFromCart } from "../app/features/cart/cartSlice";
 
 const ProductCard = ({ product }) => {
   const { pathname } = useLocation();
@@ -52,7 +52,7 @@ const ProductCard = ({ product }) => {
         {pathname.includes("cart") && (
           <button
             title='Remove'
-
+            onClick={() => dispatch(removeFromCart(product))}
             className='flex justify-between px-3 bg-red-500 text-white p-1 rounded-full flex-1'
           >
             <p>Remove</p>
