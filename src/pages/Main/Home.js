@@ -11,9 +11,6 @@ const Home = () => {
   const { brands, stock } = filter
   const { products } = useSelector((state) => state.products)
   useEffect(() => {
-    // fetch("http://localhost:5000/products")
-    //   .then((res) => res.json())
-    //   .then((data) => setProducts(data.data));
     dispatch(getProducts());
   }, [dispatch]);
 

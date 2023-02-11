@@ -9,3 +9,6 @@ export const postProducts = async (productData) => {
     await axios.post("/product", productData);
     // console.log(data);
 };
+export const deleteProduct = async (id) => {
+    await axios.delete(`/product/${id}`, id);
+};
